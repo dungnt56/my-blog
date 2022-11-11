@@ -1,178 +1,454 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assest/css/base.css">
-    <link rel="stylesheet" href="./assest/css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./assest/font/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>My Blog</title>
-</head>
-<body>
-    <div class="app">
-        <header class="header">
-            <h1 class="header__heading">MY BLOG <i class="fas fa-bell"></i></h1>
-            <p class="header__des">
-                Welcome to the blog of
-                <span>unknown</span>
-            </p>
-        </header>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Heart</title>
+    <meta name="Generator" content="EditPlus" />
+    <meta name="Author" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
 
-        <div class="container grid grid__row">
-            <!-- Begin Blog -->
-            <div class="col__left col__twothird pd__16">
+    <style>
+      html,
+      body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-                <div class="blog__card border__card bg__white">
+      .box {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+      }
 
-                    <img src="./assest/img/woods.jpg" alt="" class="img__hover col__full">
-                    <div class="blog__container">
-                        <h2 class="blog__card-title card__title">
-                            TITLE HEADING
-                        </h2>
-                        <h5 class="blog__card-desc">Title description, <span>April 7, 2014</span></h5>
-                        <p class="blog__card-about card__text">Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-                        <div class="blog__card-infor">
-                            <button class="blog__card-btn">
-                                READ MORE
-                                <div class="blog__card-icon">
-                                    <i class="fas fa-chevron-circle-right"></i>
-                                </div>
-                            </button>
-                            <p class="blog__card-comment">Comment <span>0</span></p>
-                        </div>
-                    </div>
-                </div>
+      canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      #pinkboard {
+        position: relative;
+        margin: auto;
+        height: 500px;
+        width: 500px;
+        animation: animate 1.5s infinite;
+      }
 
-                <div class="blog__card border__card mt__40 bg__white">
+      #pinkboard:before,
+      #pinkboard:after {
+        content: '';
+        position: absolute;
+        background: #ff5ca4;
+        width: 100px;
+        height: 160px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+      }
 
-                    <img src="./assest/img/bridge.jpg" alt="" class="img__hover col__full">
-                    <div class="pd__16">
-                        <h2 class="blog__card-title card__title">
-                            BLOG ENTRY
-                        </h2>
-                        <h5 class="blog__card-desc">Title description, <span>April 2, 2014</span></h5>
-                        <p class="blog__card-about card__text">Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-                        <div class="blog__card-infor">
-                            <button class="blog__card-btn">
-                                READ MORE
-                                <div class="blog__card-icon">
-                                    <i class="fas fa-chevron-circle-right"></i>
-                                </div>
-                            </button>
-                            <p class="blog__card-comment">Comment <span>2</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog -->
+      #pinkboard:before {
+        left: 100px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
 
-            <!-- Begin Col right -->
-            <div class="col__right col__third pd__16">
-                <!-- Person -->
-                <div class="person border__card bg__white">
-                    <img src="./assest/img/girl.jpg" alt="" class="img__hover col__full">
-                    <div class="pd__16">
-                        <h4 class="person__title card__title">My Name</h4>
-                        <p class="person__text card__text">Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
-                    </div>
-                </div>
+      #pinkboard:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
 
-                <!-- Populars -->
-                <div class="populars border__card bg__white mt__40">
-                    <div class="populars__title">
-                        <h3 class="card__title pd__16"> Populars Posts </h3>
-                    </div>
-                    <ul class="posts">
-                        <li class="post">
-                            <img src="./assest/img/workshop.jpg" alt="" class="post__img">
-                            <div class="post__text">
-                                <h2 class="post__title">Lorem</h2> <br>
-                                <p class="post__desc">Sed mattis nunc</p>
-                            </div>
-                        </li>
-                        <li class="post">
-                            <img src="./assest/img/gondol.jpg" alt="" class="post__img">
-                            <div class="post__text">
-                                <h2 class="post__title">Ipsum</h2> <br>
-                                <p class="post__desc">Praes tinci sed</p>
-                            </div>
-                        </li>
-                        <li class="post">
-                            <img src="./assest/img/skies.jpg" alt="" class="post__img">
-                            <div class="post__text">
-                                <h2 class="post__title">Dorum</h2> <br>
-                                <p class="post__desc">Ultricies congue</p>
-                            </div>
-                        </li>
-                        <li class="post">
-                            <img src="./assest/img/rock.jpg" alt="" class="post__img">
-                            <div class="post__text">
-                                <h2 class="post__title">Mingsum</h2> <br>
-                                <p class="post__desc">Lorem ipsum dipsum</p>
-                            </div>
-                        </li>
-                        
-                    </ul>
-                </div>
+      @keyframes animate {
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(0.8);
+        }
+        60% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
 
-                <!-- Tags -->
-                <div class="tags border__card bg__white mt__40">
-                    <div class="tags__title">
-                        <h3 class="card__title pd__16"> Tags </h3>
-                    </div>
-                    <div class="tags__list">
-                        <span class="tag__item bg__black text__white">Travel</span>
-                        <span class="tag__item bg__gray">New York</span>
-                        <span class="tag__item bg__gray">London</span>
-                        <span class="tag__item bg__gray">IKEA</span>
-                        <span class="tag__item bg__gray">NORWAY</span>
-                        <span class="tag__item bg__gray">DIY</span>
-                        <span class="tag__item bg__gray">Ideas</span>
-                        <span class="tag__item bg__gray">Baby</span>
-                        <span class="tag__item bg__gray">Family</span>
-                        <span class="tag__item bg__gray">News</span>
-                        <span class="tag__item bg__gray">Clothing</span>
-                        <span class="tag__item bg__gray">Shopping</span>
-                        <span class="tag__item bg__gray">Sports</span>
-                        <span class="tag__item bg__gray">Games</span>
-                    </div>
-                </div>
-            </div>
-            <!-- End Col right -->
+      /* firework */
+    body {
+        background: #234;
+    }
 
-        </div>
+    @keyframes firework {
+    0% { 
+        transform: translate(-50%, 60vh);
+        width: 0.5vmin;
+        opacity: 1;
+    }
+    50% { 
+        width: 0.5vmin;
+        opacity: 1;
+    }
+    100% { 
+        width: 45vmin; 
+        opacity: 0; 
+    }
+    }
 
-        <footer class="footer mt__40">
-            <div class="footer__btn">
-                <button class="footer__previous">
-                    <i class="fas fa-chevron-circle-left"></i>
-                    Previous
-                </button>
-                <button class="footer__next">
-                    Next
-                    <i class="fas fa-chevron-circle-right"></i>
-                </button>
-            </div>
+    .firework,
+    .firework::before,
+    .firework::after {
+    --top: 66vh;
+    content: "";
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5vmin;
+    aspect-ratio: 1;
+    background:
+        /* random backgrounds */
+        radial-gradient(circle, #ff5ca4 0.2vmin, #0000 0) 50% 00%,
+        radial-gradient(circle, #ff5ca4 0.3vmin, #0000 0) 00% 50%,
+        radial-gradient(circle, #ff5ca4 0.5vmin, #0000 0) 50% 99%,
+        radial-gradient(circle, #ff5ca4 0.2vmin, #0000 0) 99% 50%,
+        radial-gradient(circle, #ff5ca4 0.3vmin, #0000 0) 80% 90%,
+        radial-gradient(circle, #ff5ca4 0.5vmin, #0000 0) 95% 90%,
+        radial-gradient(circle, #ff5ca4 0.5vmin, #0000 0) 10% 60%,
+        radial-gradient(circle, #ff5ca4 0.2vmin, #0000 0) 31% 80%,
+        radial-gradient(circle, #ff5ca4 0.3vmin, #0000 0) 80% 10%,
+        radial-gradient(circle, #ff5ca4 0.2vmin, #0000 0) 90% 23%,
+        radial-gradient(circle, #ff5ca4 0.3vmin, #0000 0) 45% 20%,
+        radial-gradient(circle, #ff5ca4 0.5vmin, #0000 0) 13% 24%
+        ;
+    background-size: 0.5vmin 0.5vmin;
+    background-repeat: no-repeat;
+    animation: firework 3s;
+    }
 
-            <div class="footer__social">
-                <a href="https://www.facebook.com/" class="footer__social-item">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/" class="footer__social-item">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.pinterest.com/" class="footer__social-item">
-                    <i class="fab fa-pinterest"></i>
-                </a>
-            </div>
-            <p class="footer__copyright mt-16">Powered by <a href="">w3.css</a></p>
-            
-        </footer>
+    .firework::before {
+    transform: translate(-50%, -50%) rotate(25deg) !important; 
+    }
+
+    .firework::after {
+    transform: translate(-50%, -50%) rotate(-37deg) !important;
+    }
+    .none {
+        display: none;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <canvas id="pinkboard"></canvas>
     </div>
-</body>
+    <div id="firework" class="firework"></div>
+    <script>
+      /*
+       * Settings
+       */
+        const firework = document.getElementById("firework");
+      var settings = {
+        particles: {
+          length: 2000, // maximum amount of particles
+          duration: 2, // particle duration in sec
+          velocity: 100, // particle velocity in pixels/sec
+          effect: -1.3, // play with this for a nice effect
+          size: 13 // particle size in pixels
+        }
+      };
+      /*
+       * RequestAnimationFrame polyfill by Erik Möller
+       */
+      (function() {
+        var b = 0;
+        var c = ['ms', 'moz', 'webkit', 'o'];
+        for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
+          window.requestAnimationFrame = window[c[a] + 'RequestAnimationFrame'];
+          window.cancelAnimationFrame =
+            window[c[a] + 'CancelAnimationFrame'] ||
+            window[c[a] + 'CancelRequestAnimationFrame'];
+        }
+        if (!window.requestAnimationFrame) {
+          window.requestAnimationFrame = function(h, e) {
+            var d = new Date().getTime();
+            var f = Math.max(0, 16 - (d - b));
+            var g = window.setTimeout(function() {
+              h(d + f);
+            }, f);
+            b = d + f;
+            return g;
+          };
+        }
+        if (!window.cancelAnimationFrame) {
+          window.cancelAnimationFrame = function(d) {
+            clearTimeout(d);
+          };
+        }
+      })();
+      /*
+       * Point class
+       */
+      var Point = (function() {
+        function Point(x, y) {
+          this.x = typeof x !== 'undefined' ? x : 0;
+          this.y = typeof y !== 'undefined' ? y : 0;
+        }
+        Point.prototype.clone = function() {
+          return new Point(this.x, this.y);
+        };
+        Point.prototype.length = function(length) {
+          if (typeof length == 'undefined')
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+          this.normalize();
+          this.x *= length;
+          this.y *= length;
+          return this;
+        };
+        Point.prototype.normalize = function() {
+          var length = this.length();
+          this.x /= length;
+          this.y /= length;
+          return this;
+        };
+        return Point;
+      })();
+      /*
+       * Particle class
+       */
+      var Particle = (function() {
+        function Particle() {
+          this.position = new Point();
+          this.velocity = new Point();
+          this.acceleration = new Point();
+          this.age = 0;
+        }
+        Particle.prototype.initialize = function(x, y, dx, dy) {
+          this.position.x = x;
+          this.position.y = y;
+          this.velocity.x = dx;
+          this.velocity.y = dy;
+          this.acceleration.x = dx * settings.particles.effect;
+          this.acceleration.y = dy * settings.particles.effect;
+          this.age = 0;
+        };
+        Particle.prototype.update = function(deltaTime) {
+          this.position.x += this.velocity.x * deltaTime;
+          this.position.y += this.velocity.y * deltaTime;
+          this.velocity.x += this.acceleration.x * deltaTime;
+          this.velocity.y += this.acceleration.y * deltaTime;
+          this.age += deltaTime;
+        };
+        Particle.prototype.draw = function(context, image) {
+          function ease(t) {
+            return --t * t * t + 1;
+          }
+          var size = image.width * ease(this.age / settings.particles.duration);
+          context.globalAlpha = 1 - this.age / settings.particles.duration;
+          context.drawImage(
+            image,
+            this.position.x - size / 2,
+            this.position.y - size / 2,
+            size,
+            size
+          );
+        };
+        return Particle;
+      })();
+      /*
+       * ParticlePool class
+       */
+      var ParticlePool = (function() {
+        var particles,
+          firstActive = 0,
+          firstFree = 0,
+          duration = settings.particles.duration;
+
+        function ParticlePool(length) {
+          // create and populate particle pool
+          particles = new Array(length);
+          for (var i = 0; i < particles.length; i++)
+            particles[i] = new Particle();
+        }
+        ParticlePool.prototype.add = function(x, y, dx, dy) {
+          particles[firstFree].initialize(x, y, dx, dy);
+
+          // handle circular queue
+          firstFree++;
+          if (firstFree == particles.length) firstFree = 0;
+          if (firstActive == firstFree) firstActive++;
+          if (firstActive == particles.length) firstActive = 0;
+        };
+        ParticlePool.prototype.update = function(deltaTime) {
+          var i;
+
+          // update active particles
+          if (firstActive < firstFree) {
+            for (i = firstActive; i < firstFree; i++)
+              particles[i].update(deltaTime);
+          }
+          if (firstFree < firstActive) {
+            for (i = firstActive; i < particles.length; i++)
+              particles[i].update(deltaTime);
+            for (i = 0; i < firstFree; i++) particles[i].update(deltaTime);
+          }
+
+          // remove inactive particles
+          while (
+            particles[firstActive].age >= duration &&
+            firstActive != firstFree
+          ) {
+            firstActive++;
+            if (firstActive == particles.length) firstActive = 0;
+          }
+        };
+        ParticlePool.prototype.draw = function(context, image) {
+          // draw active particles
+          if (firstActive < firstFree) {
+            for (i = firstActive; i < firstFree; i++)
+              particles[i].draw(context, image);
+          }
+          if (firstFree < firstActive) {
+            for (i = firstActive; i < particles.length; i++)
+              particles[i].draw(context, image);
+            for (i = 0; i < firstFree; i++) particles[i].draw(context, image);
+          }
+        };
+        return ParticlePool;
+      })();
+      /*
+       * Putting it all together
+       */
+      (function(canvas) {
+        var context = canvas.getContext('2d'),
+          particles = new ParticlePool(settings.particles.length),
+          particleRate =
+            settings.particles.length / settings.particles.duration, // particles/sec
+          time;
+
+        // get point on heart with -PI <= t <= PI
+        function pointOnHeart(t) {
+          return new Point(
+            160 * Math.pow(Math.sin(t), 3),
+            130 * Math.cos(t) -
+              50 * Math.cos(2 * t) -
+              20 * Math.cos(3 * t) -
+              10 * Math.cos(4 * t) +
+              25
+          );
+        }
+
+        // creating the particle image using a dummy canvas
+        var image = (function() {
+          var canvas = document.createElement('canvas'),
+            context = canvas.getContext('2d');
+          canvas.width = settings.particles.size;
+          canvas.height = settings.particles.size;
+          // helper function to create the path
+          function to(t) {
+            var point = pointOnHeart(t);
+            point.x =
+              settings.particles.size / 2 +
+              (point.x * settings.particles.size) / 350;
+            point.y =
+              settings.particles.size / 2 -
+              (point.y * settings.particles.size) / 350;
+            return point;
+          }
+          // create the path
+          context.beginPath();
+          var t = -Math.PI;
+          var point = to(t);
+          context.moveTo(point.x, point.y);
+          while (t < Math.PI) {
+            t += 0.01; // baby steps!
+            point = to(t);
+            context.lineTo(point.x, point.y);
+          }
+          context.closePath();
+          // create the fill
+          context.fillStyle = '#FF5CA4';
+          context.fill();
+          // create the image
+          var image = new Image();
+          image.src = canvas.toDataURL();
+          return image;
+        })();
+
+        // render that thing!
+        function render() {
+          // next animation frame
+          requestAnimationFrame(render);
+
+          // update time
+          var newTime = new Date().getTime() / 1000,
+            deltaTime = newTime - (time || newTime);
+          time = newTime;
+
+          // clear canvas
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          // create new particles
+          var amount = particleRate * deltaTime;
+          for (var i = 0; i < amount; i++) {
+            var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+            var dir = pos.clone().length(settings.particles.velocity);
+            particles.add(
+              canvas.width / 2 + pos.x,
+              canvas.height / 2 - pos.y,
+              dir.x,
+              -dir.y
+            );
+          }
+
+          // update and draw particles
+          particles.update(deltaTime);
+          particles.draw(context, image);
+          hideFirework();
+        }
+
+        // handle (re-)sizing of the canvas
+        function onResize() {
+          canvas.width = canvas.clientWidth;
+          canvas.height = canvas.clientHeight;
+        }
+        window.onresize = onResize;
+
+        function hideFirework() {
+            firework.className = "none";
+        }
+        // delay rendering bootstrap
+        setTimeout(function() {
+          onResize();
+          render();
+        }, 2200);
+      })(document.getElementById('pinkboard'));
+    </script>
+    <div
+      class="center-text"
+      ,
+      style="background-color:rgb(0, 0, 0);
+        width: 100%;
+        color: rgb(225, 12, 168);
+        height:100%;
+        font-size: 31px;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        text-align: center;"
+    >
+      Text
+    </div>
+  </body>
 </html>
